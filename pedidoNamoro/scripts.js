@@ -1,10 +1,11 @@
 function accepted() {
-  alert(
-    "Você aceitou namorar com Carlos Gonçales," +
-      "por falor envie o número do seu dedo! e fotos para sugestão de Aliança"
-  );
-  // redireciona para um URL após clicar no SIM
-  location.href = "https://music.youtube.com/watch?v=izGwDsrQ1eQ";
+  const mensagem = "Meu bem,Eu aceito namorar com você! S2";
+  const numero = "5544998137196"; // coloque seu número aqui
+
+  const url =
+    "https://wa.me/" + numero + "?text=" + encodeURIComponent(mensagem);
+
+  window.location.href = url;
 }
 
 function newPosition(min, max) {
