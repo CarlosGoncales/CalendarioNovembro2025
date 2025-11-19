@@ -1,73 +1,53 @@
-.conteiner,
-.conteiner-conteudo3,
-.conteiner-conteudo4,
-.conteiner-conteudo5,
-.conteiner-conteudo8,
-.conteiner-conteudo9,
-.conteiner-conteudo10,
-.conteiner-conteudo11,
-.conteiner-conteudo12,
-.conteiner-conteudo13,
-.conteiner-conteudo14,
-.conteiner-conteudo15,
-.conteiner-conteudo17,
-.conteiner-conteudo18,
-.conteiner-conteudo19 {
-  max-width: 600px;
-  margin: auto;
-  padding: 10px;
+/* Layout geral */
+main {
+  background: #000;
+  color: #fff;
+  font-family: sans-serif;
+  padding: 20px 10px;
+  width: 100%;
+  min-height: 100vh;
   text-align: center;
+  box-sizing: border-box;
 }
 
 .conteinerCalendario {
   width: 100%;
-  max-width: 700px; /* Não cresce mais que isso */
+  max-width: 700px;
   margin: auto;
-  padding: 10px;
-  overflow-x: auto; /* Se for muito estreito, permite rolagem horizontal */
+  padding: 15px;
   background-color: rgba(0, 0, 0, 0.75);
   color: #fff;
   text-align: center;
+  border-radius: 10px;
 }
 
-main {
-  background: #000000;
-  color: #fff;
-  font-family: sans-serif;
-  height: 100%;
-  left: 0;
-  padding: 10px;
-  position: fixed;
-  text-align: center;
-  top: 0;
-  width: 100%;
-}
-
-section {
-  margin: auto;
-  width: 170px;
+/* Botões */
+section.buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .btn {
   background: #a52df4;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   color: white;
-  padding: 10px;
-  width: 80px;
+  padding: 12px;
+  width: 120px;
+  font-size: 16px;
 }
 
-.btn.btn-yes {
-  display: block;
-  position: fixed;
+.btn-no {
+  position: relative;
 }
 
-.btn.btn-no {
-  position: absolute;
+.btn-yes {
+  position: relative;
 }
 
-/* Coração pulsante */
-
+/* Coração animado (sem alterações) */
 .loading-heart {
   display: block;
   position: relative;
@@ -107,6 +87,7 @@ section {
   top: -24px;
   border-radius: 50% 50% 0 0;
 }
+
 @keyframes loading-heart {
   0% {
     transform: scale(0.95);
@@ -125,5 +106,23 @@ section {
   }
   100% {
     transform: scale(0.9);
+  }
+}
+
+/* Ajustes específicos para celular */
+@media (max-width: 480px) {
+  h4 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .btn {
+    width: 100px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  section.buttons {
+    gap: 10px;
   }
 }
