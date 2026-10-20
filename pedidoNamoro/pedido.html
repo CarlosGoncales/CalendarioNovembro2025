@@ -2,29 +2,33 @@
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3a0f1d" />
     <title>Por Favor diz que sim..</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,800;1,7..72,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
 
   <body>
-    <main>
-      <div class="conteudo1">
-        <div class="conteinerCalendario">
-          <h4>
+    <main class="agenda">
+      <article class="tela carta">
+        <div class="pagina">
+          <p>
             Olha, tem um negócio que eu queria te perguntar, mas antes disso tem
             algumas coisinhas que eu queria falar kkkkk.
-          </h4>
+          </p>
 
-          <h4>
+          <p class="aparte">
             (Sim, eu sei QUE É MUUUUITO BREGA fazer um site, mas me dá um
             desconto, eu sou meio tímido e novo nessas coisas. Espero com o
             tempo aprender a ser mais romântico; por enquanto, a única coisa que
             eu sei bem é fazer programa rsrs.
-          </h4>
+          </p>
 
-          <h4>
+          <p>
             Pô, a gente estava falando disso esses dias, mas, antes de as
             Olimpíadas começarem, eu não tinha ideia de que as coisas estariam
             assim depois de quase dois meses. Em todas as caronas nesse
@@ -36,25 +40,26 @@
             medo, ela é determinada e persistente e, mesmo com os chicletes
             colados na cruz de vez em quando voltando para encher o saco, ela
             não desiste das coisas...
-          </h4>
+          </p>
 
-          <h4>
+          <p>
             Você me disse uma vez que uma sabia amiga sua te falou: "Quando o
             número de provações é grande, quer dizer que a vitória que está
             vindo é maior ainda". Olha, eu espero mesmo que a vitória que está
             chegando para mim seja ter você do meu lado na minha vida... O que
             você acha de continuar preenchendo esse calendário comigo? Assim não
             é querendo falar nada, não, mas para isso você precisa responder uma
-            perguntinha que eu acho que você já sabe qual é... Quer Namorar
-            comigo?
-          </h4>
+            perguntinha que eu acho que você já sabe qual é... <strong class="pedido">Quer Namorar
+            comigo?</strong>
+          </p>
 
           <section class="buttons">
-            <button class="btn btn-yes" onclick="accepted()">
+            <button class="botao botao-cheio btn-yes" type="button" onclick="accepted()">
               SIM (Sou Massa)
             </button>
             <button
-              class="btn btn-no"
+              class="botao btn-no"
+              type="button"
               onclick="declined(this)"
               onmouseover="declined(this)"
             >
@@ -62,7 +67,9 @@
             </button>
           </section>
         </div>
-      </div>
+
+        <a class="voltar-capa voltar-agenda" href="../index.html#dia-19">Voltar</a>
+      </article>
     </main>
 
     <script src="./scripts.js"></script>

@@ -8,14 +8,16 @@ function accepted() {
   window.location.href = url;
 }
 
-function newPosition(min, max) {
-  return Math.random() * (max - min) + min + "%";
-}
-
+// O botão "NÃO" foge para um lugar aleatório dentro da tela
 function declined(btn) {
-  // btn declarado na função
-  btn.style.position = "absolute";
-  btn.style.bottom = newPosition(10, 90);
-  btn.style.left = newPosition(10, 90);
+  const margem = 12;
+  const largura = btn.offsetWidth;
+  const altura = btn.offsetHeight;
+  const maxX = window.innerWidth - largura - margem;
+  const maxY = window.innerHeight - altura - margem;
+
+  btn.style.position = "fixed";
+  btn.style.left = margem + Math.random() * Math.max(0, maxX - margem) + "px";
+  btn.style.top = margem + Math.random() * Math.max(0, maxY - margem) + "px";
   console.log("ops......");
 }

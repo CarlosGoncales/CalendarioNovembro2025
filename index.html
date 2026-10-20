@@ -3,332 +3,283 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#3a0f1d">
     <title>Calendário Novembro 2025</title>
-    <script src="assets/jquery-3.6.0.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,800;1,7..72,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preload" href="/ImagensNovas/fundo.gif">
-    <style>
-
-    </style>
 </head>
 
-<body class="fundo" onclick="musicaOn()">
-    <audio id="player" autoplay="autoplay" controls="controls" loop="loop">
-        <source src="./assets/trilhasonora.mp3" type="audio/mp3" />
+<body>
+    <audio id="player" loop preload="auto">
+        <source src="./assets/trilhasonora.mp3" type="audio/mpeg">
     </audio>
-    <div class="conteinerCalendario conteudo1">
-        <div id="animacao" class="conteinerCalendario">
-            <div>
-                <h1 style="margin-top: 5%;">Hoje eu quero fazer uma breve recapitulação com a mulher mais linda que eu conheço.</h1>
-                <h5>Quem será que é?</h5>
-                <button type="button" class="btn btn-danger" onclick="mostrarConteudo()">Descubra!</button>
-                <br>
-            <div style="display: flex; justify-content: center; width: 100%;">
-                <img id="fotoGata" style="display: none;" src="./ImagensNovas/Josi.png" alt=""
-                 class="foto">
-            </div>
-                <div>  
-                     <p></p>        
-                     <p></p>        
-                     <p></p>        
-                    <button type="button" class="btn btn-danger" onclick="mudarConteudo()">Continuar S2</button>                        
+
+    <button id="musica" class="musica" type="button" aria-label="Tocar música" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13" /><circle cx="6" cy="18" r="3" /><circle cx="17" cy="16" r="3" /></svg>
+    </button>
+
+    <main class="agenda">
+
+        <!-- ============ CAPA ============ -->
+        <section class="tela tela-capa" id="inicio" data-tela="inicio">
+            <div class="pagina">
+                <h1>Hoje eu quero fazer uma breve recapitulação com a mulher mais linda que eu conheço.</h1>
+                <p class="pergunta">Quem será que é?</p>
+                <button type="button" class="botao" id="descubra">Descubra!</button>
+
+                <figure class="polaroid polaroid-capa" id="fotoGata" hidden>
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Josi.png" alt="Foto da Josi">
+                </figure>
+
+                <div class="acoes">
+                    <a class="botao botao-cheio" href="#calendario">Continuar S2</a>
                 </div>
             </div>
+        </section>
 
-        </div>
-    </div>
-    <div class="conteudo2">
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 5%;">Bem vinda a nova agenda digital</h1>
-            <h5>Existem Eventos Pendentes, Clique nas Datas Selecionadas para ver mais</h5>
-            <hr>
-            <table class="calendario">
-                <span><strong class="text-muted">Novembro de 2025</strong></span>
-                <thead>
-                    <tr>
-                        <td>Dom</td>
-                        <td>Seg</td>
-                        <td>Ter</td>
-                        <td>Qua</td>
-                        <td>Qui</td>
-                        <td>Sex</td>
-                        <td>Sáb</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>                        
-                        <td class="marcado" onclick="mudarFoto1()">31</td>
-                        <td class="marcado" onclick="mudarFoto2()">1</td>
-                    </tr>
-                    <tr>
-                        <td class="marcado" onclick="mudarFoto3()">2</td>                 
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td class="marcado" onclick="mudarFoto4()">7</td>         
-                        <td class="marcado" onclick="mudarFoto5()">8</td>       
-                    </tr>
-                    <tr>                    
-                        <td>9</td>
-                        <td>10</td>
-                        <td class="marcado" onclick="mudarFoto6()">11</td>       
-                        <td>12</td>
-                        <td>13</td>
-                        <td>14</td>
-                        <td class="marcado" onclick="mudarFoto7()">15</td> 
-                    </tr>
-                    <tr>                        
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td class="marcadoEspecial" onclick="mudarFoto8()"> 19</td>
-                        <td>20</td>
-                        
-                        <td>21</td>
-                        <td class="marcado" onclick="mudarFoto9()"> 22</td>
-                    </tr>
-                    <tr>                   
-                        <td class="marcado" onclick="mudarFoto10()"> 23</td>
-                        <td class="marcado" onclick="mudarFoto11()"> 24</td>
-                        <td>25</td>
-                        <td>26</td>
-                        <td>27</td>
-                        <td>28</td>
-                        <td>29</td>
-                    </tr>
-                    <tr>
-                   
-                        <td>30</td>
-                        <td>31</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+        <!-- ============ CALENDÁRIO ============ -->
+        <section class="tela tela-calendario" id="calendario" data-tela="calendario" hidden>
+            <div class="pagina">
+                <h1>Bem vinda a nova agenda digital</h1>
+                <p class="subtitulo">Existem Eventos Pendentes, Clique nas Datas Selecionadas para ver mais</p>
 
-                    </tr>
-                </tbody>
-            </table>
-            <hr>
+                <div class="mes">
+                    <h2 class="mes-nome">Novembro de 2025</h2>
+                    <div class="grade">
+                        <div class="semana">
+                            <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
+                        </div>
+                        <div class="dias">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <a class="dia marcado outro-mes" href="#dia-31" aria-label="31 de outubro: Primeiro Date Comigo">31</a>
+                            <a class="dia marcado" href="#dia-01" aria-label="1 de novembro: Encerramento das Olimpiadas">1</a>
 
-            
+                            <a class="dia marcado" href="#dia-02" aria-label="2 de novembro: Rolê de Moto?">2</a>
+                            <span class="dia">3</span><span class="dia">4</span><span class="dia">5</span><span class="dia">6</span>
+                            <a class="dia marcado" href="#dia-07" aria-label="7 de novembro">7</a>
+                            <a class="dia marcado" href="#dia-08" aria-label="8 de novembro: Formatura do Modulo basico">8</a>
 
+                            <span class="dia">9</span><span class="dia">10</span>
+                            <a class="dia marcado" href="#dia-11" aria-label="11 de novembro: Comer Pastel na Praça">11</a>
+                            <span class="dia">12</span><span class="dia">13</span><span class="dia">14</span>
+                            <a class="dia marcado" href="#dia-15" aria-label="15 de novembro">15</a>
 
+                            <span class="dia">16</span><span class="dia">17</span><span class="dia">18</span>
+                            <a class="dia especial" href="#dia-19" aria-label="19 de novembro: O Pedido de Namoro">19</a>
+                            <span class="dia">20</span><span class="dia">21</span>
+                            <a class="dia marcado" href="#dia-22" aria-label="22 de novembro">22</a>
 
-            
-                </tbody>
-                
-            </table>
-            
-        </div>
-    </div>
-    <div class="conteudo3">
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 31 de Outubro</h1>
-            <h5>Primeiro Date Comigo</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-                class="imagem1" src="./ImagensNovas/Dia31.PNG" alt="">
-            <small style="margin-top: 5%;">
-                <h5>
-                    Assim, 
-                </h5> 
-            <h5>    Quando eu percebi que estava começando a gostar de você, minha primeira reação foi
-                    "Para com essa porra mlk, dado o que já aconteceu, ela nunca ia querer alguma coisa,
-                    e tu ainda vai perder sua principal fonte de fofoca". Aí, depois de sermos "Stalkeados" e
-                    eu perceber que poderia acontecer alguma coisa, fiquei todo animadinho.
-                    Primeiro date, o que eu faço? Deixo ela escolher o lugar e vou com ela ver roupas da seção infantil.</h5>
-            </small>
-             <div>          
-                <button type="button" class="btn btn-danger" onclick="mudarFoto1()">Voltar </button>                        
+                            <a class="dia marcado" href="#dia-23" aria-label="23 de novembro">23</a>
+                            <a class="dia marcado" href="#dia-24" aria-label="24 de novembro: ALÔ SEU POLICIA">24</a>
+                            <span class="dia">25</span><span class="dia">26</span><span class="dia">27</span><span class="dia">28</span><span class="dia">29</span>
+
+                            <span class="dia">30</span>
+                        </div>
+                    </div>
+                </div>
+                <a class="voltar-capa" href="#inicio">Voltar</a>
             </div>
-        </div>
-        
-    </div>
+        </section>
 
-    <div class="conteudo4">
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 01 de Novembro</h1>
-            <h5>Encerramento das Olimpiadas</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/01Novembro.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5>Nem o "Caralho Josiele" é suficiente para descrever você naquele dia </h5>
-                <h5>Na Missa e depois comprando o Brinco de Manhã eu estava todo tímido,
-                    de  noite eu estava com medo de ter se saído mal na noite anterior 
-                    e de você estar ficando brava com aquelas pragas zoando a gente kkkkkk,
-                    mas depois da dança estar ali com você foi tão gostoso(Exceto pelo medo do Reinaldo derrubar a Santa KKKKKK) </h5>
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto2()">Voltar </button>              
+        <!-- ============ MEMÓRIAS ============ -->
+        <article class="tela memoria" id="dia-31" data-tela="dia-31" hidden>
+            <div class="pagina">
+                <h1>Dia 31 de Outubro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Dia31.PNG" alt="" loading="lazy">
+                    <figcaption>Primeiro Date Comigo</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Assim,</p>
+                    <p>Quando eu percebi que estava começando a gostar de você, minha primeira reação foi
+                        "Para com essa porra mlk, dado o que já aconteceu, ela nunca ia querer alguma coisa,
+                        e tu ainda vai perder sua principal fonte de fofoca". Aí, depois de sermos "Stalkeados" e
+                        eu perceber que poderia acontecer alguma coisa, fiquei todo animadinho.
+                        Primeiro date, o que eu faço? Deixo ela escolher o lugar e vou com ela ver roupas da seção infantil.</p>
+                </div>
             </div>
-            
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo5">
-
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 02 de Novembro</h1>
-            <h5>Rolê de Moto?</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/Dia02.PNG" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Aqui eu já estava chutando o pau da barraca, ou isso dava em alguma coisa ou eu
-                     ia acabar muito triste nessa história. O negócio já estava tomando uma proporção legal,
-                     Então eu já estava num cagaço danado KKKKKKKKKKKKK
-            </small>
-             <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto3()">Voltar </button>              
-             </div>
-        </div>
-    </div>
-
-    <div class="conteudo6">
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 07 de Novembro</h1>
-            <h5>Benção do Padre Darcy para ver se as coisas melhoram</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/Dia07.PNG" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Aqui você me mostrou que eu tinha comido sushi do jeito errado KKKK, 
-                     eu também tive a certeza de que a família Rodrigues é a maior família de coelhos da cidade KKKKKKK,
-                     para ser sincero eu ainda estava no cagaço de: "será que essa menina realmente gosta de mim?" KKKKKKKKKK
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto4()">Voltar </button>              
+        <article class="tela memoria" id="dia-01" data-tela="dia-01" hidden>
+            <div class="pagina">
+                <h1>Dia 01 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/01Novembro.jpg" alt="" loading="lazy">
+                    <figcaption>Encerramento das Olimpiadas</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Nem o "Caralho Josiele" é suficiente para descrever você naquele dia</p>
+                    <p>Na Missa e depois comprando o Brinco de Manhã eu estava todo tímido,
+                        de  noite eu estava com medo de ter se saído mal na noite anterior
+                        e de você estar ficando brava com aquelas pragas zoando a gente kkkkkk,
+                        mas depois da dança estar ali com você foi tão gostoso(Exceto pelo medo do Reinaldo derrubar a Santa KKKKKK)</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo7">
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 08 de Novembro</h1>
-            <h5>Formatura do Modulo basico</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia08.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Maluco, a ansiedade que eu fiquei nessa missa é coisa de louco, queria que acabasse logo para eu ir para Maringá.
-                    Já estava na ideia: "A missa acaba às 20h30, com 30 minutos eu estou lá". Resumindo, a missa acabou às 21h KKKK.
-                    Cheguei e me deparo com a galera indo embora kkkkk, mas não me arrependo nada desse dia. 
-                    Depois, no carro, eu sabia que tinha que te pedir em namoro, mas aí vem tanta coisa na cabeça, né?
-                    "A eu tô sendo emocionado demais", "A gente começou a ficar faz pouco tempo", "Meu psicólogo falou que eu tenho que ter calma nas coisas",
-                    "Eu nunca namorei e se estiver apressando as coisas",
-                    "Será que ela gosta mesmo de mim?", "Acho que vou jogar uns verdes e demorar mais umas semaninhas para pedir..."
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto5()">Voltar</button>              
+        <article class="tela memoria" id="dia-02" data-tela="dia-02" hidden>
+            <div class="pagina">
+                <h1>Dia 02 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Dia02.PNG" alt="" loading="lazy">
+                    <figcaption>Rolê de Moto?</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Aqui eu já estava chutando o pau da barraca, ou isso dava em alguma coisa ou eu
+                        ia acabar muito triste nessa história. O negócio já estava tomando uma proporção legal,
+                        Então eu já estava num cagaço danado KKKKKKKKKKKKK</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo8">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 11 de Novembro</h1>
-            <h5>Comer Pastel na Praça</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia11.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Olha, esse dia aqui eu percebi que tinha que te pedir em namoro (olha que eu tomei uma senhora intimada sua no meio da formação, né?).
-                     Por mais que eu estivesse cagando de medo de ir embora às 23:30, não tive vontade nenhuma de ir embora nesse dia, até as "coisas Bentas" que o
-                     Bernardo trazia para a gente, estavam boas de se sentir.
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto6()">Voltar</button>              
+        <article class="tela memoria" id="dia-07" data-tela="dia-07" hidden>
+            <div class="pagina">
+                <h1>Dia 07 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Dia07.PNG" alt="" loading="lazy">
+                    <figcaption>Benção do Padre Darcy para ver se as coisas melhoram</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Aqui você me mostrou que eu tinha comido sushi do jeito errado KKKK,
+                        eu também tive a certeza de que a família Rodrigues é a maior família de coelhos da cidade KKKKKKK,
+                        para ser sincero eu ainda estava no cagaço de: "será que essa menina realmente gosta de mim?" KKKKKKKKKK</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo9">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 15 de Novembro</h1>
-            <h5>Pizza com Ansiedade kkkkkk</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/Dia15.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Olha, nesse dia sua ansiedade estava bonitinha de ver kkkkk. Tentei fazer de tudo para te deixar menos ansiosa, mas acho que não consegui muito, não, né?
-                     Nesse dia também eu descobri que eu amo sua língua solta.
-                     Soou tão bem no meu ouvido ser chamado de namorado por você (mesmo que sem querer, né...)
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto7()">Voltar</button>              
+        <article class="tela memoria" id="dia-08" data-tela="dia-08" hidden>
+            <div class="pagina">
+                <h1>Dia 08 de Novembro</h1>
+                <figure class="polaroid polaroid-deitada">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/dia08.jpg" alt="" loading="lazy">
+                    <figcaption>Formatura do Modulo basico</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Maluco, a ansiedade que eu fiquei nessa missa é coisa de louco, queria que acabasse logo para eu ir para Maringá.
+                        Já estava na ideia: "A missa acaba às 20h30, com 30 minutos eu estou lá". Resumindo, a missa acabou às 21h KKKK.
+                        Cheguei e me deparo com a galera indo embora kkkkk, mas não me arrependo nada desse dia.
+                        Depois, no carro, eu sabia que tinha que te pedir em namoro, mas aí vem tanta coisa na cabeça, né?
+                        "A eu tô sendo emocionado demais", "A gente começou a ficar faz pouco tempo", "Meu psicólogo falou que eu tenho que ter calma nas coisas",
+                        "Eu nunca namorei e se estiver apressando as coisas",
+                        "Será que ela gosta mesmo de mim?", "Acho que vou jogar uns verdes e demorar mais umas semaninhas para pedir..."</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo10">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 19 de Novembro</h1>
-            <h5>O Pedido de Namoro</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia19.PNG" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Olha, Tudo o que eu tenho para falar desse dia eu já disse no textinho né? 
-            </small>
-            <div>
-               <a href="./pedidoNamoro/pedido.html"><button type="button" class="btn btn-danger">Relembre como foi</button></a>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto8()">Voltar</button>              
+        <article class="tela memoria" id="dia-11" data-tela="dia-11" hidden>
+            <div class="pagina">
+                <h1>Dia 11 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Dia11.jpg" alt="" loading="lazy">
+                    <figcaption>Comer Pastel na Praça</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Olha, esse dia aqui eu percebi que tinha que te pedir em namoro (olha que eu tomei uma senhora intimada sua no meio da formação, né?).
+                        Por mais que eu estivesse cagando de medo de ir embora às 23:30, não tive vontade nenhuma de ir embora nesse dia, até as "coisas Bentas" que o
+                        Bernardo trazia para a gente, estavam boas de se sentir.</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo11">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 22 de Novembro</h1>
-            <h5>Acho que alguém falou que me amava né?</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia22.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Só para deixar o registro de nois com roupa combinandinho em Jandaia KKKKKK.
-                <h5> Ignora a qualidade da imagem kkk a que ta no meu celular ta melhorzinha .
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto9()">Voltar</button>              
+        <article class="tela memoria" id="dia-15" data-tela="dia-15" hidden>
+            <div class="pagina">
+                <h1>Dia 15 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/Dia15.jpg" alt="" loading="lazy">
+                    <figcaption>Pizza com Ansiedade kkkkkk</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Olha, nesse dia sua ansiedade estava bonitinha de ver kkkkk. Tentei fazer de tudo para te deixar menos ansiosa, mas acho que não consegui muito, não, né?
+                        Nesse dia também eu descobri que eu amo sua língua solta.
+                        Soou tão bem no meu ouvido ser chamado de namorado por você (mesmo que sem querer, né...)</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo12">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 23 de Novembro</h1>
-            <h5>Provas, Decorações e Aniversários</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia23.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Aqui eu vi que agora todos os servos do GAV tão me vendo como mão de obra na arrumação das coisa kkkk. Vi que sua familia não é tão doida
-                    como parece(teu pai me da medo...). Fica aqui o registro
-                     que os paparazes fizeram de nós na missa...
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto10()">Voltar</button>              
+        <article class="tela memoria memoria-especial" id="dia-19" data-tela="dia-19" hidden>
+            <div class="pagina">
+                <h1>Dia 19 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/dia19.PNG" alt="" loading="lazy">
+                    <figcaption>O Pedido de Namoro</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Olha, Tudo o que eu tenho para falar desse dia eu já disse no textinho né?</p>
+                </div>
+                <div class="acoes">
+                    <a class="botao botao-cheio" href="./pedidoNamoro/pedido.html">Relembre como foi</a>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
 
-    <div class="conteudo13">        
-        <div class="conteinerCalendario">
-            <h1 style="margin-top: 10%;">Dia 24 de Novembro</h1>
-            <h5>ALÔ SEU POLICIA</h5>
-            <img style="width: 400px; height: 640px; border-radius: 20px; margin-top: 2%; margin-bottom: 2%;"
-               class="imagem1" src="./ImagensNovas/dia24.jpg" alt="">
-            <small style="margin-top: 5%;"> <br>
-                <h5> Olha ESSA É FACIL A MAIOR VERGONHA DA MINHA VIDA, MEU BEM DO CÉU....
-            </small>
-            <div>
-               <button type="button" class="btn btn-danger" onclick="mudarFoto11()">Voltar</button>              
+        <article class="tela memoria" id="dia-22" data-tela="dia-22" hidden>
+            <div class="pagina">
+                <h1>Dia 22 de Novembro</h1>
+                <figure class="polaroid polaroid-deitada">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/dia22.jpg" alt="" loading="lazy">
+                    <figcaption>Acho que alguém falou que me amava né?</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Só para deixar o registro de nois com roupa combinandinho em Jandaia KKKKKK.</p>
+                    <p>Ignora a qualidade da imagem kkk a que ta no meu celular ta melhorzinha .</p>
+                </div>
             </div>
-        </div>
-    </div>
+        </article>
+
+        <article class="tela memoria" id="dia-23" data-tela="dia-23" hidden>
+            <div class="pagina">
+                <h1>Dia 23 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/dia23.jpg" alt="" loading="lazy">
+                    <figcaption>Provas, Decorações e Aniversários</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Aqui eu vi que agora todos os servos do GAV tão me vendo como mão de obra na arrumação das coisa kkkk. Vi que sua familia não é tão doida
+                        como parece(teu pai me da medo...). Fica aqui o registro
+                        que os paparazes fizeram de nós na missa...</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="dia-24" data-tela="dia-24" hidden>
+            <div class="pagina">
+                <h1>Dia 24 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/dia24.jpg" alt="" loading="lazy">
+                    <figcaption>ALÔ SEU POLICIA</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Olha ESSA É FACIL A MAIOR VERGONHA DA MINHA VIDA, MEU BEM DO CÉU....</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Navegação das memórias (preenchida pelo script) -->
+        <nav class="navegacao" id="navegacao" aria-label="Navegar entre as memórias" hidden>
+            <a class="seta" id="anterior" href="#" aria-label="Memória anterior">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+            </a>
+            <a class="botao" href="#calendario">Voltar</a>
+            <a class="seta" id="proxima" href="#" aria-label="Próxima memória">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+            </a>
+        </nav>
+    </main>
 
     <script src="./script.js"></script>
 </body>
