@@ -47,46 +47,31 @@
                 <h1>Bem vinda a nova agenda digital</h1>
                 <p class="subtitulo">Existem Eventos Pendentes, Clique nas Datas Selecionadas para ver mais</p>
 
+                <!-- O mês é montado pelo script.js a partir das memórias abaixo (atributo data-data) -->
                 <div class="mes">
-                    <h2 class="mes-nome">Novembro de 2025</h2>
+                    <div class="mes-topo">
+                        <button type="button" class="seta-mes" id="mesAnterior" aria-label="Mês anterior">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+                        </button>
+                        <h2 class="mes-nome" id="mesNome" aria-live="polite">Novembro de 2025</h2>
+                        <button type="button" class="seta-mes" id="mesProximo" aria-label="Próximo mês">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                        </button>
+                    </div>
                     <div class="grade">
                         <div class="semana">
                             <span>Dom</span><span>Seg</span><span>Ter</span><span>Qua</span><span>Qui</span><span>Sex</span><span>Sáb</span>
                         </div>
-                        <div class="dias">
-                            <span></span><span></span><span></span><span></span><span></span>
-                            <a class="dia marcado outro-mes" href="#dia-31" aria-label="31 de outubro: Primeiro Date Comigo">31</a>
-                            <a class="dia marcado" href="#dia-01" aria-label="1 de novembro: Encerramento das Olimpiadas">1</a>
-
-                            <a class="dia marcado" href="#dia-02" aria-label="2 de novembro: Rolê de Moto?">2</a>
-                            <span class="dia">3</span><span class="dia">4</span><span class="dia">5</span><span class="dia">6</span>
-                            <a class="dia marcado" href="#dia-07" aria-label="7 de novembro">7</a>
-                            <a class="dia marcado" href="#dia-08" aria-label="8 de novembro: Formatura do Modulo basico">8</a>
-
-                            <span class="dia">9</span><span class="dia">10</span>
-                            <a class="dia marcado" href="#dia-11" aria-label="11 de novembro: Comer Pastel na Praça">11</a>
-                            <span class="dia">12</span><span class="dia">13</span><span class="dia">14</span>
-                            <a class="dia marcado" href="#dia-15" aria-label="15 de novembro">15</a>
-
-                            <span class="dia">16</span><span class="dia">17</span><span class="dia">18</span>
-                            <a class="dia especial" href="#dia-19" aria-label="19 de novembro: O Pedido de Namoro">19</a>
-                            <span class="dia">20</span><span class="dia">21</span>
-                            <a class="dia marcado" href="#dia-22" aria-label="22 de novembro">22</a>
-
-                            <a class="dia marcado" href="#dia-23" aria-label="23 de novembro">23</a>
-                            <a class="dia marcado" href="#dia-24" aria-label="24 de novembro: ALÔ SEU POLICIA">24</a>
-                            <span class="dia">25</span><span class="dia">26</span><span class="dia">27</span><span class="dia">28</span><span class="dia">29</span>
-
-                            <span class="dia">30</span>
-                        </div>
+                        <div class="dias" id="dias"></div>
                     </div>
+                    <div class="pontos-meses" id="pontosMeses" aria-hidden="true"></div>
                 </div>
                 <a class="voltar-capa" href="#inicio">Voltar</a>
             </div>
         </section>
 
         <!-- ============ MEMÓRIAS ============ -->
-        <article class="tela memoria" id="dia-31" data-tela="dia-31" hidden>
+        <article class="tela memoria" id="dia-31" data-tela="dia-31" data-data="2025-10-31" hidden>
             <div class="pagina">
                 <h1>Dia 31 de Outubro</h1>
                 <figure class="polaroid">
@@ -105,7 +90,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-01" data-tela="dia-01" hidden>
+        <article class="tela memoria" id="dia-01" data-tela="dia-01" data-data="2025-11-01" hidden>
             <div class="pagina">
                 <h1>Dia 01 de Novembro</h1>
                 <figure class="polaroid">
@@ -123,7 +108,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-02" data-tela="dia-02" hidden>
+        <article class="tela memoria" id="dia-02" data-tela="dia-02" data-data="2025-11-02" hidden>
             <div class="pagina">
                 <h1>Dia 02 de Novembro</h1>
                 <figure class="polaroid">
@@ -139,7 +124,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-07" data-tela="dia-07" hidden>
+        <article class="tela memoria" id="dia-07" data-tela="dia-07" data-data="2025-11-07" hidden>
             <div class="pagina">
                 <h1>Dia 07 de Novembro</h1>
                 <figure class="polaroid">
@@ -155,7 +140,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-08" data-tela="dia-08" hidden>
+        <article class="tela memoria" id="dia-08" data-tela="dia-08" data-data="2025-11-08" hidden>
             <div class="pagina">
                 <h1>Dia 08 de Novembro</h1>
                 <figure class="polaroid polaroid-deitada">
@@ -175,7 +160,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-11" data-tela="dia-11" hidden>
+        <article class="tela memoria" id="dia-11" data-tela="dia-11" data-data="2025-11-11" hidden>
             <div class="pagina">
                 <h1>Dia 11 de Novembro</h1>
                 <figure class="polaroid">
@@ -191,7 +176,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-15" data-tela="dia-15" hidden>
+        <article class="tela memoria" id="dia-15" data-tela="dia-15" data-data="2025-11-15" hidden>
             <div class="pagina">
                 <h1>Dia 15 de Novembro</h1>
                 <figure class="polaroid">
@@ -207,7 +192,7 @@
             </div>
         </article>
 
-        <article class="tela memoria memoria-especial" id="dia-19" data-tela="dia-19" hidden>
+        <article class="tela memoria memoria-especial" id="dia-19" data-tela="dia-19" data-data="2025-11-19" hidden>
             <div class="pagina">
                 <h1>Dia 19 de Novembro</h1>
                 <figure class="polaroid">
@@ -224,7 +209,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-22" data-tela="dia-22" hidden>
+        <article class="tela memoria" id="dia-22" data-tela="dia-22" data-data="2025-11-22" hidden>
             <div class="pagina">
                 <h1>Dia 22 de Novembro</h1>
                 <figure class="polaroid polaroid-deitada">
@@ -239,7 +224,7 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-23" data-tela="dia-23" hidden>
+        <article class="tela memoria" id="dia-23" data-tela="dia-23" data-data="2025-11-23" hidden>
             <div class="pagina">
                 <h1>Dia 23 de Novembro</h1>
                 <figure class="polaroid">
@@ -255,7 +240,21 @@
             </div>
         </article>
 
-        <article class="tela memoria" id="dia-24" data-tela="dia-24" hidden>
+        <article class="tela memoria" id="dia-23-alianca" data-tela="dia-23-alianca" data-data="2025-11-23" hidden>
+            <div class="pagina">
+                <h1>Dia 23 de Novembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2025-11-23-alianca.jpg" alt="" loading="lazy">
+                    <figcaption>Nossa primeira aliança</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>A imagem fala por si só</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="dia-24" data-tela="dia-24" data-data="2025-11-24" hidden>
             <div class="pagina">
                 <h1>Dia 24 de Novembro</h1>
                 <figure class="polaroid">
@@ -265,6 +264,215 @@
                 </figure>
                 <div class="texto">
                     <p>Olha ESSA É FACIL A MAIOR VERGONHA DA MINHA VIDA, MEU BEM DO CÉU....</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- ============ DEZEMBRO 2025 EM DIANTE ============ -->
+        <article class="tela memoria" id="2025-12-18" data-tela="2025-12-18" data-data="2025-12-18" hidden>
+            <div class="pagina">
+                <h1>Dia 18 de Dezembro</h1>
+                <figure class="polaroid polaroid-deitada">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2025-12-18.jpg" alt="" loading="lazy">
+                    <figcaption>Primeiro role em Família</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Aqui que eu descobri o seu medo de palhaço kkkkkkkk</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2025-12-19" data-tela="2025-12-19" data-data="2025-12-19" hidden>
+            <div class="pagina">
+                <h1>Dia 19 de Dezembro</h1>
+                <div class="colagem">
+                    <figure class="polaroid">
+                        <span class="fita" aria-hidden="true"></span>
+                        <img src="./ImagensNovas/2025-12-19a.jpg" alt="" loading="lazy">
+                    </figure>
+                    <figure class="polaroid">
+                        <span class="fita" aria-hidden="true"></span>
+                        <img src="./ImagensNovas/2025-12-19b.jpg" alt="" loading="lazy">
+                    </figure>
+                </div>
+                <p class="legenda-colagem">Nosso primeiro mesversário</p>
+                <div class="texto">
+                    <p>Nosso primeiro mesversario junto, eu nem vou lembrar de como tava ruim aquela pizza e de que você precisou pagar a foto, mais vou lembrar de como você tava bonita esse dia</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2025-12-28" data-tela="2025-12-28" data-data="2025-12-28" hidden>
+            <div class="pagina">
+                <h1>Dia 28 de Dezembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2025-12-28.jpg" alt="" loading="lazy">
+                    <figcaption>Missa em Maringá</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>A gente precisa aprender a tirar foto né ?kkkkk</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2025-12-31" data-tela="2025-12-31" data-data="2025-12-31" hidden>
+            <div class="pagina">
+                <h1>Dia 31 de Dezembro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2025-12-31.jpg" alt="" loading="lazy">
+                    <figcaption>É 31 de dezembro fim de mais um ano</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Eu poderia falar o quão mágico foi, mais apenas irei deixar registrado que alguém marcou casamento nesse dia aqui</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-02-19" data-tela="2026-02-19" data-data="2026-02-19" hidden>
+            <div class="pagina">
+                <h1>Dia 19 de Fevereiro</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-02-19.jpg" alt="" loading="lazy">
+                    <figcaption>Mesversario de namoro</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Pô eu queria que você tivesse dançado junto com os personagens enquanto eu comia comida de bar, mais você não quis</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-03-19" data-tela="2026-03-19" data-data="2026-03-19" hidden>
+            <div class="pagina">
+                <h1>Dia 19 de Março</h1>
+                <figure class="polaroid polaroid-deitada">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-03-19.jpg" alt="" loading="lazy">
+                    <figcaption>Mesversario de namoro</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Esse aqui foi um rodízio em Jandaia que caiu do céu né ?kkkk</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-04-19" data-tela="2026-04-19" data-data="2026-04-19" hidden>
+            <div class="pagina">
+                <h1>Dia 19 de Abril</h1>
+                <figure class="polaroid polaroid-deitada">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-04-19.jpg" alt="" loading="lazy">
+                    <figcaption>Mesversario de namoro</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Pizzinha do Manzini huuummmm</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-04-26" data-tela="2026-04-26" data-data="2026-04-26" hidden>
+            <div class="pagina">
+                <h1>Dia 26 de Abril</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-04-26.jpg" alt="" loading="lazy">
+                    <figcaption>Bingo da paróquia</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>jogamos como nunca perdemos como sempre</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-05-02" data-tela="2026-05-02" data-data="2026-05-02" hidden>
+            <div class="pagina">
+                <h1>Dia 02 de Maio</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-05-02.jpg" alt="" loading="lazy">
+                    <figcaption>Festa da cidade</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Deu PT HAHAHAHAHHAHAHAHAHAHHAHAHAHAHAH</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-06-04" data-tela="2026-06-04" data-data="2026-06-04" hidden>
+            <div class="pagina">
+                <h1>Dia 04 de Junho</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-06-04.jpg" alt="" loading="lazy">
+                    <figcaption>Formatura do GP</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Quem vê nem sabe que na noite anterior alguém tava bravo porque tu sumiu do nada</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-06-12" data-tela="2026-06-12" data-data="2026-06-12" hidden>
+            <div class="pagina">
+                <h1>Dia 12 de Junho</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-06-12.jpg" alt="" loading="lazy">
+                    <figcaption>Nosso primeiro dia dos namorados</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Nada que um rodízio, e uma festa junina não resolva, ps"Ensinaram o padre a farmar aura"</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-07-11" data-tela="2026-07-11" data-data="2026-07-11" hidden>
+            <div class="pagina">
+                <h1>Dia 11 de Julho</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-07-11.jpg" alt="" loading="lazy">
+                    <figcaption>Retiro Experiência de Oração</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>momentos antes do retiro acontecer</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-07-12" data-tela="2026-07-12" data-data="2026-07-12" hidden>
+            <div class="pagina">
+                <h1>Dia 12 de Julho</h1>
+                <div class="colagem">
+                    <figure class="polaroid">
+                        <span class="fita" aria-hidden="true"></span>
+                        <img src="./ImagensNovas/2026-07-12a.jpg" alt="" loading="lazy">
+                    </figure>
+                    <figure class="polaroid">
+                        <span class="fita" aria-hidden="true"></span>
+                        <img src="./ImagensNovas/2026-07-12b.jpg" alt="" loading="lazy">
+                    </figure>
+                </div>
+                <p class="legenda-colagem">Retiro Experiência de Oração</p>
+                <div class="texto">
+                    <p>o buquê mais improvisado e mais grande que eu já te dei</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="tela memoria" id="2026-07-26" data-tela="2026-07-26" data-data="2026-07-26" hidden>
+            <div class="pagina">
+                <h1>Dia 26 de Julho</h1>
+                <figure class="polaroid">
+                    <span class="fita" aria-hidden="true"></span>
+                    <img src="./ImagensNovas/2026-07-26.jpg" alt="" loading="lazy">
+                    <figcaption>Aniversário da Mariane</figcaption>
+                </figure>
+                <div class="texto">
+                    <p>Não pode nem ir ver a romagnole e sair por 5 minutinhos que o povo acha que a gente foi embora né?</p>
                 </div>
             </div>
         </article>

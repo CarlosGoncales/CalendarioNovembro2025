@@ -391,6 +391,123 @@ button:focus-visible {
   45% { transform: scale(1.06); }
 }
 
+/* troca de mês */
+.mes-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.seta-mes {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--couro);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--couro);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.seta-mes:hover {
+  background: var(--couro);
+  color: var(--papel);
+}
+
+.seta-mes:disabled {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none;
+}
+
+.seta-mes svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mes-topo .mes-nome {
+  text-align: center;
+  font-size: clamp(1.8rem, 7vw, 2.3rem);
+}
+
+.pontos-meses {
+  display: flex;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 18px;
+}
+
+.pontos-meses span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(58, 15, 29, 0.22);
+}
+
+.pontos-meses span.atual {
+  width: 20px;
+  border-radius: 4px;
+  background: var(--caneta);
+}
+
+/* colagem: duas polaroids sobrepostas */
+.colagem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 30px;
+  padding: 0 4px;
+}
+
+.colagem .polaroid {
+  width: auto;
+  margin: 0;
+  padding-bottom: 12px;
+}
+
+.colagem .polaroid img {
+  aspect-ratio: 3 / 4;
+  max-height: none;
+}
+
+.colagem .polaroid:first-child {
+  transform: rotate(-4deg) translateX(8%);
+  z-index: 1;
+}
+
+.colagem .polaroid:last-child {
+  transform: rotate(3.5deg) translate(-8%, 14%);
+  z-index: 2;
+}
+
+.memoria:nth-of-type(even) .colagem .polaroid:first-child {
+  transform: rotate(-4deg) translateX(8%);
+}
+
+.colagem .polaroid:last-child .fita {
+  left: 60%;
+  transform: translateX(-50%) rotate(6deg);
+}
+
+.legenda-colagem {
+  margin-top: calc(14% + 18px);
+  font-family: var(--mao);
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  text-align: center;
+  color: var(--tinta);
+}
+
 .voltar-capa {
   display: inline-block;
   margin-top: 24px;
